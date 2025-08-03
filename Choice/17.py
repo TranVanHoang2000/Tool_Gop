@@ -1,116 +1,146 @@
-import hashlib
-import random
-import requests
-import time
-from datetime import datetime
-import json
-import sys
-import urllib3
+#!/usr/bin/env python3
 
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+try:
+    import requests, time, os, re, json, sys
+    from rich import print as println  
+    from pystyle import Colors, Colorate
+    import platform
+    import random
+    from fake_useragent import UserAgent
+    from time import sleep
 
-app = {
-    'api_key': '882a8490361da98702bf97a021ddc14d',
-    'secret': '62f8ce9f74b12f84c123cc23437a4a32',
-    'key': ['ChanHungCoder_KeyRegFBVIP_9999', 'DCHVIPKEYREG']
-}
+except ModuleNotFoundError:
+    print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;31mRequired Modules Are Not Installed, Please Run 'pip install -r requirements.txt'")
+    sys.exit(1)
 
-email_prefix = ['gmail.com', 'hotmail.com', 'yahoo.com', 'outlook.com']
+BASE_URL = "https://socioblend.com"
+SUCCESS, FAILED, DELAY = [], [], {"TIME": 0}
 
-def create_account():
-    random_birth_day = datetime.strftime(datetime.fromtimestamp(random.randint(
-        int(time.mktime(datetime.strptime('1980-01-01', '%Y-%m-%d').timetuple())),
-        int(time.mktime(datetime.strptime('1995-12-30', '%Y-%m-%d').timetuple()))
-    )), '%Y-%m-%d')
+def banner():
+    banner = Colorate.Diagonal(Colors.rainbow, """
+████████╗██╗   ██╗██╗  ██╗████████╗ ██████╗  ██████╗ ██╗     
+╚══██╔══╝██║   ██║██║  ██║╚══██╔══╝██╔═══██╗██╔═══██╗██║     
+   ██║   ██║   ██║███████║   ██║   ██║   ██║██║   ██║██║     
+   ██║   ╚██╗ ██╔╝██╔══██║   ██║   ██║   ██║██║   ██║██║     
+   ██║    ╚████╔╝ ██║  ██║   ██║   ╚██████╔╝╚██████╔╝███████╗
+   ╚═╝     ╚═══╝  ╚═╝  ╚═╝   ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝
+""")
+    for X in banner:
+        sys.stdout.write(X)
+        sys.stdout.flush()
+        sleep(0.000001)
 
-    names = {
-        'first': ['JAMES', 'JOHN', 'ROBERT', 'MICHAEL', 'WILLIAM', 'DAVID'],
-        'last': ['SMITH', 'JOHNSON', 'WILLIAMS', 'BROWN', 'JONES', 'MILLER'],
-        'mid': ['Alexander', 'Anthony', 'Charles', 'Dash', 'David', 'Edward']
-    }
+def info():
+    info = Colorate.Diagonal(Colors.rainbow, """
+\n➢ Admin : Trần Văn Hoàng            ➢ Phiên Bản : 1.0
+════════════════════════════════════════════════  
+➢ Youtuber : https://www.youtube.com/@TranVanHoang2000
+➢ Nhóm Zalo Có Bot : https://zalo.me/g/lzousq414
+════════════════════════════════════════════════  
+""")
+    for X in info:
+        sys.stdout.write(X)
+        sys.stdout.flush()
+        sleep(0.000001)
 
-    random_first_name = random.choice(names['first'])
-    random_name = f"{random.choice(names['mid'])} {random.choice(names['last'])}"
-    password = f'HelloReg{random.randint(0, 9999999)}?#@'
-    full_name = f"{random_first_name} {random_name}"
-    md5_time = hashlib.md5(str(time.time()).encode()).hexdigest()
-    hash_ = f"{md5_time[0:8]}-{md5_time[8:12]}-{md5_time[12:16]}-{md5_time[16:20]}-{md5_time[20:32]}"
-    email_rand = f"{full_name.replace(' ', '').lower()}{hashlib.md5((str(time.time()) + datetime.strftime(datetime.now(), '%Y%m%d')).encode()).hexdigest()[0:6]}@{random.choice(email_prefix)}"
-    gender = 'M' if random.randint(0, 10) > 5 else 'F'
+class SubmitTikTokViews:
+    def __init__(self, video_url: str) -> None:
+        self.video_url = video_url
+        self.session = requests.Session()
 
-    req = {
-        'api_key': app['api_key'],
-        'attempt_login': True,
-        'birthday': random_birth_day,
-        'client_country_code': 'EN',
-        'fb_api_caller_class': 'com.facebook.registration.protocol.RegisterAccountMethod',
-        'fb_api_req_friendly_name': 'registerAccount',
-        'firstname': random_first_name,
-        'format': 'json',
-        'gender': gender,
-        'lastname': random_name,
-        'email': email_rand,
-        'locale': 'en_US',
-        'method': 'user.register',
-        'password': password,
-        'reg_instance': hash_,
-        'return_multiple_errors': True
-    }
-
-    sig = ''.join([f'{k}={v}' for k, v in sorted(req.items())])
-    ensig = hashlib.md5((sig + app['secret']).encode()).hexdigest()
-    req['sig'] = ensig
-
-    api = 'https://b-api.facebook.com/method/user.register'
-
-    def _call(url='', params=None, post=True):
-        headers = {
-            'User-Agent': '[FBAN/FB4A;FBAV/35.0.0.48.273;FBDM/{density=1.33125,width=800,height=1205};FBLC/en_US;FBCR/;FBPN/com.facebook.katana;FBDV/Nexus 7;FBSV/4.1.1;FBBK/0;]'
+    def RetrieveCookies(self) -> str:
+        self.session.headers = {
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+            "Accept-Encoding": "gzip, deflate",
+            "Accept-Language": "en-US,en;q=0.9",
+            "Connection": "keep-alive",
+            "Host": "socioblend.com",
+            "Sec-Fetch-Dest": "document",
+            "Sec-Fetch-Mode": "navigate",
+            "Sec-Fetch-Site": "none",
+            "Sec-Fetch-User": "?1",
+            "Upgrade-Insecure-Requests": "1",
+            "User-Agent": f"{UserAgent().random}"
         }
-        if post:
-            response = requests.post(url, data=params, headers=headers, verify=False)
-        else:
-            response = requests.get(url, params=params, headers=headers, verify=False)
-        return response.text
+        response = self.session.get(f"{BASE_URL}/Free-TikTok-Views", verify=True, allow_redirects=True)
+        cookies_string = "; ".join([f"{key}={value}" for key, value in self.session.cookies.get_dict().items()])
+        return cookies_string
 
-    reg = _call(api, req)
-    reg_json = json.loads(reg)
-    uid = reg_json.get('session_info', {}).get('uid')
-    access_token = reg_json.get('session_info', {}).get('access_token')
-    error_code = reg_json.get('error_code')
-    error_msg = reg_json.get('error_msg')
+    def SubmitForm(self, cookies: str) -> None:
+        global SUCCESS, FAILED, DELAY
+        data = {
+            "video_url": self.video_url
+        }
 
-    if uid is not None and access_token is not None:
-        data_to_save = f"{random_birth_day}:{full_name}:{email_rand}:{password}:{uid}:{access_token}"
-        with open("facebook.txt", "a") as file:
-            file.write(data_to_save + "\n")
+        self.session.headers.update({
+            "Content-Length": str(len(json.dumps(data))),
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Sec-Fetch-Site": "same-origin",
+            "Sec-Fetch-Mode": "cors",
+            "Cookie": cookies,
+            "Accept": "*/*",
+            "Sec-Fetch-Dest": "empty",
+            "Origin": BASE_URL,
+            "Referer": f"{BASE_URL}/free-tiktok-views",
+        })
 
-        print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mTạo Thành Công :")
-        print(f"  \033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mDate of Birth : {random_birth_day}")
-        print(f"  \033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mName          : {full_name}")
-        print(f"  \033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mMail          : {email_rand}")
-        print(f"  \033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mPassword      : {password}")
-        print(f"  \033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mId            : {uid}")
-        print(f"  \033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mToken         : {access_token}")
-        print()
-    else:
-        if error_code and error_msg:
-            print(f"\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;31mError : {error_code} - {error_msg}")
-        else:
-            print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;31mUnknown Error")
+        response = self.session.post(f"{BASE_URL}/submit-tiktok.php", data=data, verify=True, allow_redirects=False)
 
-if __name__ == "__main__":
-    try:
-        account_count = int(input("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số Lượng Acc Muốn Reg : "))
-        if account_count <= 0:
-            print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;31mSố Lượng Không Được Thấp Hơn 0 !")
+        if '"status":"success"' in response.text:
+            print(f"\n\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32m{response.status_code} - {response.reason}")
+            print(f"\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mStatus : Đã Gửi View Thành Công !")
+            print(f"\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mLink : {self.video_url}")
+            print(f"\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mViews : +1000")
+
+        elif '"retry_after"' in response.text:
+            retry_after = re.search(r'"retry_after":(\d+)', response.text)
+            if retry_after:
+                DELAY["TIME"] = int(retry_after.group(1))
+        elif 'The URL you entered is not a valid TikTok video link.' in response.text:
+            print(f"\033[1;32m[\033[1;31m♤\033[1;32m] ➩ \033[1;31mURL Không Hợp Lệ, Hãy Kiểm Tra Lại !")
             sys.exit(1)
-    except ValueError:
-        print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;31mTham Số Không Hợp Lệ !")
+        else:
+            print(f"\033[1;32m[\033[1;31m♤\033[1;32m] ➩ \033[1;31mLỗi Khi Gửi View | {response.status_code} - {response.reason}")
+            FAILED.append(self.video_url)
+            time.sleep(5)
+
+def Main():
+    os.system("cls" if os.name == "nt" else "clear")
+    banner()
+    info()
+
+    print("\n\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mDán Liên Kết Video TikTok Hợp Lệ (Ví Dụ : https://www.tiktok.com/@...)")
+    video_url = input("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Link TikTok Cần Buff : \033[1;36m").strip()
+
+    if video_url.startswith("https://www.tiktok.com/@") or video_url.startswith("https://tiktok.com/@"):
+        print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mĐang Xử Lý, Vui Lòng Chờ...")
+        time.sleep(2)
+
+        while True:
+            try:
+                if DELAY["TIME"] != 0:
+                    for timer in range(DELAY["TIME"], 0, -1):
+                        print(f"\r\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;36mChờ {timer} Giây... | \033[1;32mThành Công : {len(SUCCESS)} | \033[1;31mThất Bại : {len(FAILED)}", end="")
+                        time.sleep(1)
+                    DELAY["TIME"] = 0
+
+                submitter = SubmitTikTokViews(video_url)
+                cookies = submitter.RetrieveCookies()
+                submitter.SubmitForm(cookies)
+
+            except requests.exceptions.RequestException:
+                print("\n\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32m Kết Nối Mạng Không Ổn Định, Hãy Thử Lại !")
+                time.sleep(10)
+
+            except KeyboardInterrupt:
+                print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mCảm Ơn Bạn Đã Tin Tưởng Và Sử Dụng Tool, Chúc Bạn May Mắn !")
+                break
+
+            except Exception as e:
+                print(f"\n\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mLỗi Không Xác Định : {e}")
+                time.sleep(5)
+    else:
+        print("\n\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mLink TikTok Không Hợp Lệ, Hãy Dùng Link Đầy Đủ Từ Trình Duyệt !")
         sys.exit(1)
 
-    for _ in range(account_count):
-        create_account()
-        time.sleep(5)
-
-    print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mTất Cả Tài Khoản Đã Được Tạo, Kết Quả Đã Được Lưu Trong Tệp : facebook.txt")
+Main()
