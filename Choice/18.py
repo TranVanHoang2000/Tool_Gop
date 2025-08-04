@@ -28,10 +28,10 @@ def create_account():
         'last': ['SMITH', 'JOHNSON', 'WILLIAMS', 'BROWN', 'JONES', 'MILLER'],
         'mid': ['Alexander', 'Anthony', 'Charles', 'Dash', 'David', 'Edward']
     }
-
+    
     random_first_name = random.choice(names['first'])
     random_name = f"{random.choice(names['mid'])} {random.choice(names['last'])}"
-    password = f'HelloReg{random.randint(0, 9999999)}?#@'
+    password = f'MkRegAcc_{random.randint(0, 9999999)}@@@'
     full_name = f"{random_first_name} {random_name}"
     md5_time = hashlib.md5(str(time.time()).encode()).hexdigest()
     hash_ = f"{md5_time[0:8]}-{md5_time[8:12]}-{md5_time[12:16]}-{md5_time[16:20]}-{md5_time[20:32]}"
@@ -73,8 +73,15 @@ def create_account():
             response = requests.get(url, params=params, headers=headers, verify=False)
         return response.text
 
-    reg = _call(api, req)
-    reg_json = json.loads(reg)
+    # GỌI RA NGOÀI _call
+    response = _call(api, req)
+
+    try:
+        reg_json = json.loads(response)
+    except json.JSONDecodeError:
+        print("\033[1;31m[!] Lỗi khi giải mã JSON từ API. Nội dung phản hồi:\n", response)
+        return
+
     uid = reg_json.get('session_info', {}).get('uid')
     access_token = reg_json.get('session_info', {}).get('access_token')
     error_code = reg_json.get('error_code')
@@ -101,7 +108,7 @@ def create_account():
 
 if __name__ == "__main__":
     try:
-        account_count = int(input("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số Lượng Acc Muốn Reg : "))
+        account_count = int(input("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số Lượng Acc Muốn Reg : \033[1;36m"))
         if account_count <= 0:
             print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;31mSố Lượng Không Được Thấp Hơn 0 !")
             sys.exit(1)

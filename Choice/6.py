@@ -95,7 +95,7 @@ def share(tach, id_share):
 def main_share():
     clear()
     banner()
-    input_file = open(input("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Tên File Chứa Cookie : \033[1;36m")).read().split('\n')
+    input_file = open(input("\n\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Tên File Chứa Cookie : \033[1;36m")).read().split('\n')
     id_share = input("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập ID Cần Share : \033[1;36m")
     delay = int(input("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Delay Share : \033[1;36m"))
     total_share = int(input("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mBao Nhiêu Share Thì Dừng Tool : \033[1;36m"))

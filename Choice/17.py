@@ -87,7 +87,7 @@ class SubmitTikTokViews:
         response = self.session.post(f"{BASE_URL}/submit-tiktok.php", data=data, verify=True, allow_redirects=False)
 
         if '"status":"success"' in response.text:
-            print(f"\n\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32m{response.status_code} - {response.reason}")
+            print(f"\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32m{response.status_code} - {response.reason}")
             print(f"\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mStatus : Đã Gửi View Thành Công !")
             print(f"\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mLink : {self.video_url}")
             print(f"\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mViews : +1000")
@@ -140,7 +140,7 @@ def Main():
                 print(f"\n\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mLỗi Không Xác Định : {e}")
                 time.sleep(5)
     else:
-        print("\n\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mLink TikTok Không Hợp Lệ, Hãy Dùng Link Đầy Đủ Từ Trình Duyệt !")
+        print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mLink TikTok Không Hợp Lệ, Hãy Dùng Link Đầy Đủ Từ Trình Duyệt !")
         sys.exit(1)
 
 Main()
