@@ -21,17 +21,17 @@ def banner():
 
 def info():
     info = Colorate.Diagonal(Colors.rainbow, """
-\n➢ Admin : Trần Văn Hoàng            ➢ Phiên Bản : 1.0
+\nAdmin Tool : Trần Văn Hoàng            Phiên Bản : 1.0
 ════════════════════════════════════════════════  
-➢ Youtuber : https://www.youtube.com/@TranVanHoang2000
-➢ Nhóm Zalo Có Bot : https://zalo.me/g/lzousq414
+Youtuber : Trần Văn Hoàng
+Zalo : 0974698128
 ════════════════════════════════════════════════  
 """)
     for X in info:
         sys.stdout.write(X)
         sys.stdout.flush()
         sleep(0.000001)
-    
+
 banner()
 info()
 

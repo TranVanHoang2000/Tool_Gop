@@ -56,10 +56,10 @@ def banner():
 
 def info():
     info = Colorate.Diagonal(Colors.rainbow, """
-\n➢ Admin : Trần Văn Hoàng            ➢ Phiên Bản : 1.0
+\nAdmin Tool : Trần Văn Hoàng            Phiên Bản : 1.0
 ════════════════════════════════════════════════  
-➢ Youtuber : https://www.youtube.com/@TranVanHoang2000
-➢ Nhóm Zalo Có Bot : https://zalo.me/g/lzousq414
+Youtuber : Trần Văn Hoàng
+Zalo : 0974698128
 ════════════════════════════════════════════════  
 """)
     for X in info:
@@ -76,28 +76,26 @@ class Main:
         prefs = {"profile.default_content_setting_values.notifications": 2}
         self.options.add_experimental_option("prefs", prefs)
 
-        # Khởi tạo Chrome driver
         self.driver = uc.Chrome(options=self.options)
 
-        # Cập nhật XPath mới theo class/ID mới nhất
         self.xpaths = [
-            "//button[contains(@class, 't-followers-button')]",       # Followers
-            "//button[contains(@class, 't-likes-button')]",           # Hearts
-            "//button[contains(@class, 't-commentslike-button')]",    # Comments Hearts
-            "//button[contains(@class, 't-views-button')]",           # Views
-            "//button[contains(@class, 't-shares-button')]",          # Shares
-            "//button[contains(@class, 't-favorites-button')]",       # Favorites
-            "//button[contains(@class, 't-live-button')]"             # Livestream
+            "//button[contains(@class, 't-followers-button')]",
+            "//button[contains(@class, 't-likes-button')]",
+            "//button[contains(@class, 't-commentslike-button')]",
+            "//button[contains(@class, 't-views-button')]",
+            "//button[contains(@class, 't-shares-button')]",
+            "//button[contains(@class, 't-favorites-button')]",
+            "//button[contains(@class, 't-live-button')]"
         ]
 
         self.enter_video_url = [
-            "//input[@placeholder='Enter TikTok video URL']",   # Followers
-            "//input[@placeholder='Enter TikTok video URL']",   # Hearts
-            "//input[@placeholder='Enter TikTok video URL']",   # Comments Hearts
-            "//input[@placeholder='Enter TikTok video URL']",   # Views
-            "//input[@placeholder='Enter TikTok video URL']",   # Shares
-            "//input[@placeholder='Enter TikTok video URL']",   # Favorites
-            "//input[@placeholder='Enter TikTok video URL']"    # Livestream
+            "//input[@placeholder='Hãy Nhập Url Video TikTok']",
+            "//input[@placeholder='Hãy Nhập Url Video TikTok']",
+            "//input[@placeholder='Hãy Nhập Url Video TikTok']",
+            "//input[@placeholder='Hãy Nhập Url Video TikTok']",
+            "//input[@placeholder='Hãy Nhập Url Video TikTok']",
+            "//input[@placeholder='Hãy Nhập Url Video TikTok']",
+            "//input[@placeholder='Hãy Nhập Url Video TikTok']"
         ]
 
         self.search_button = [
@@ -151,14 +149,14 @@ class Main:
             WebDriverWait(self.driver, 10).until(
                 EC.presence_of_element_located((By.TAG_NAME, "body"))
             )
-            print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mPage Is Ready !")
+            print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mTrang Đã Sẵn Sàng !")
         except TimeoutException:
-            print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;31m001 Error - Cant Connect To Web Service")
+            print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;31mLỗi : Không Thể Kết Nối Với Dịch Vụ Web !")
             quit()
 
     def wait_for_captcha_solve(self):
-        print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mVui Lòng Giải Captcha Thủ Công Trong Trình Duyệt.")
-        input("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhấn Enter Sau Khi Captcha Đã Được Giải Và Giao Diện Chính Đã Hiện Ra...")
+        print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mVui Lòng Giải Captcha Thủ Công Trong Trình Duyệt Google Chrome !")
+        input("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhấn [Enter] Sau Khi Captcha Đã Được Giải Và Đã Load Xong...")
 
     def check_if_button_is_enabled(self, button): 
         if button.is_enabled():
@@ -172,18 +170,18 @@ class Main:
         try:
             element = WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH, xpath)))
             if element.is_enabled():
-                return f"\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mOnline"
+                return f"\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mOn"
             else:
-                return f"\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;31mOffline"
+                return f"\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;31mOff"
         except TimeoutException:
-            return f"\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;31mNot Found"
+            return f"\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;31mKhông Tồn Tại"
 
     def display_button_list(self):
-        text = "\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mDecide Which Bot You Want [1 To 8]\n"
+        text = "\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Lựa Chọn Bạn Muốn [Từ 1 Đến 8]\n"
         for i in range(7):
             text = text + "[" + str(i+1) + "] " + self.xpathnames[i] + " " + self.check_button_status(self.xpaths[i]) + "\n" 
             i+=i
-        text = text + f"\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32m 8 - Telegram [Online]"
+        text = text + f"\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số : 8 - Telegram [Online]"
         print(text)
 
     def click_button(self, number_option):
@@ -193,13 +191,11 @@ class Main:
             if element.is_enabled():
                 element.click()
             else:
-                print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;31m004 Error - Offline OR Number not found")
+                print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;31mLỗi - Ngoại Tuyến Hoặc Không Tìm Thấy Số")
                 quit()
         except TimeoutException:
-            print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;31m005 Error - Offline OR Number not found OR Network error")
+            print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;31mLỗi - Ngoại Tuyến Hoặc Không Tìm Thấy Số Hoặc Lỗi Mạng")
             quit()
-
-
 
     def user_input_option(self):
         self.option = int(input())
@@ -221,58 +217,53 @@ class Main:
             try:
                 alert = self.driver.switch_to.alert
                 alert.dismiss()
-                print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mĐã phát hiện và đóng alert.")
+                print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mĐã Phát Hiện Và Đóng Alert.")
             except NoAlertPresentException:
-                print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;31mKhông có alert nào xuất hiện.")
+                print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;31mKhông Có Alert Nào Xuất Hiện.")
 
 
     def get_insert_tiktok_link(self):
-        print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mSend the Tiktok Link")
+        print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mGửi Liên Kết Tiktok")
         tiktok_link = input()
         myElem = None
         try:
             myElem = WebDriverWait(self.driver, 2).until(EC.presence_of_element_located((By.XPATH, self.enter_video_url[self.option-1])))
-            print("\n\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mLoading input Field")
+            print("\n\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mĐang Tải Trường Đầu Vào")
         except TimeoutException:
-            print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;31m006 Error - Cant Find Input Field")
+            print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;31mLỗi - Không Tìm Thấy Trường Nhập Liệu")
             quit()
         myElem = WebDriverWait(self.driver, 2).until(EC.presence_of_element_located((By.XPATH, self.enter_video_url[self.option-1])))
         myElem.send_keys(str(tiktok_link))
 
         time.sleep(2)
 
-
-
     def send(self):
         text_box = None
         search_button = None
         send_button = None
-        
-        #Search Button init
+
         try:
             search_button = WebDriverWait(self.driver, 5).until(EC.presence_of_element_located((By.XPATH, self.search_button[self.option-1])))
-            print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mLoading Search Field") 
+            print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mĐang Tải Trường Tìm Kiếm") 
             time.sleep(1)
             search_button.click()
         except TimeoutException:
-            print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;31m009 Error - Search not Found OR disabled")
+            print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;31mLỗi - Không Tìm Thấy Tìm Kiếm Hoặc Bị Vô Hiệu Hóa")
             quit()
 
         time.sleep(3)
 
-
-        #Send Button init
         try:
             send_button = WebDriverWait(self.driver, 5).until(EC.presence_of_element_located((By.XPATH, self.send_button[self.option-1])))
             time.sleep(1)
             send_button.click()
-            print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mLoading Button Field")
-            print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mLoaded Everything successfully!")
-            print(f"\n\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mBot Is Running Now")
+            print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mĐang Tải Trường Nút")
+            print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mĐã Tải Mọi Thứ Thành Công !")
+            print(f"\n\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mBot Đang Chạy")
             self.successfully_message()
             self.generate_and_send(text_box, search_button, send_button)
         except TimeoutException:
-            print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;31mLoading Text Field")
+            print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mĐang Tải Trường Văn Bản")
             
 
         time.sleep(1)
@@ -280,11 +271,11 @@ class Main:
         #Trying to get textbox
         try:
             text_box = WebDriverWait(self.driver, 5).until(EC.presence_of_element_located((By.XPATH, self.timer_text[self.option-1])))
-            print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mLoaded Everything successfully!")
+            print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mĐã Tải Mọi Thứ Thành Công !")
             print(f"\n{Fore.WHITE}[BOT IS RUNNING NOW]{Fore.RESET}")
             self.generate_and_send(text_box, search_button, send_button)
         except TimeoutException:
-            print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;31m008 Error - Send Key not Found")
+            print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;31mLỗi - Không Tìm Thấy Khóa Gửi")
             quit()
 
        
@@ -305,14 +296,14 @@ class Main:
                 self.successfully_message()
                 text_box = None
         except TimeoutException:
-            print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;31m007 Error - Cant send "+(self.xpathnames[self.option+1])+" because of Connection Error or Closed Service")
+            print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;31mLỗi - Không Thể Gửi"+(self.xpathnames[self.option+1])+" because of Connection Error or Closed Service")
             quit()
 
 
 
 
     def successfully_message(self):
-        print(f"\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mSend "+(self.xpathnames[self.option-1])+" Successfully!")
+        print(f"\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mGửi"+(self.xpathnames[self.option-1])+" Successfully!")
 
     def main(self):
         self.clear_console()
@@ -321,7 +312,7 @@ class Main:
 
         self.driver.get("https://zefoy.com/")
 
-        print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mBot Loading, please wait!")
+        print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mBot Đang Load, Vui Lòng Đợi...")
         self.wait_for_page_to_load()
         time.sleep(2)
         self.wait_for_captcha_solve()
@@ -330,12 +321,10 @@ class Main:
         self.user_input_option()
 
         time.sleep(1)
-        self.check_if_website_loaded('row', "\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mStarted successfully!", "\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32m006 Error - Site cant Connect AND Load", 5)
+        self.check_if_website_loaded('row', "\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mKích Hoạt Thành Công !", "\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;31mLỗi - Trang Web Không Thể Kết Nối Và Tải", 5)
 
         self.get_insert_tiktok_link()
         self.send()
-
-        # Weitere Schritte und Methoden hier einfügen
 
         self.driver.quit()
 

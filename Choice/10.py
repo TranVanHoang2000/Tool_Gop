@@ -34,10 +34,10 @@ def banner():
 
 def info():
     info = Colorate.Diagonal(Colors.rainbow, """
-\n➢ Admin : Trần Văn Hoàng            ➢ Phiên Bản : 1.0
+\nAdmin Tool : Trần Văn Hoàng            Phiên Bản : 1.0
 ════════════════════════════════════════════════  
-➢ Youtuber : https://www.youtube.com/@TranVanHoang2000
-➢ Nhóm Zalo Có Bot : https://zalo.me/g/lzousq414
+Youtuber : Trần Văn Hoàng
+Zalo : 0974698128
 ════════════════════════════════════════════════  
 """)
     for X in info:
@@ -1099,7 +1099,7 @@ def main():
     banner()
     info()
 
-    box_file = "Saved_Boxes.txt"
+    box_file = "Save_Box.txt"
     print(f"\n\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;31mChọn ID Box :")
     print(f"\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m1\033[1;32m]\033[1;36m Nhập ID Box Mới")
     print(f"\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m2\033[1;32m]\033[1;36m Sử Dụng ID Box Đã Lưu")
@@ -1134,7 +1134,7 @@ def main():
         print(f"\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;31mLựa Chọn Không Hợp Lệ !")
         return
 
-    cookie_file = "saved_cookies.txt"
+    cookie_file = "Save_Cookie.txt"
     cookies = []
 
     print(f"\n\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mChọn Cookie :")

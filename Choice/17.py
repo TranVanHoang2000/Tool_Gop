@@ -10,7 +10,9 @@ try:
     from time import sleep
 
 except ModuleNotFoundError:
-    print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;31mRequired Modules Are Not Installed, Please Run 'pip install -r requirements.txt'")
+    print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;31m Bạn Chưa Setup, Đang Setup...")
+    os.system('pip install requests rich pystyle fake_useragent')
+    print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32m Đã Setup Thành Công, Đang Thoát Để Reset...")
     sys.exit(1)
 
 BASE_URL = "https://socioblend.com"
@@ -32,10 +34,10 @@ def banner():
 
 def info():
     info = Colorate.Diagonal(Colors.rainbow, """
-\n➢ Admin : Trần Văn Hoàng            ➢ Phiên Bản : 1.0
+\nAdmin Tool : Trần Văn Hoàng            Phiên Bản : 1.0
 ════════════════════════════════════════════════  
-➢ Youtuber : https://www.youtube.com/@TranVanHoang2000
-➢ Nhóm Zalo Có Bot : https://zalo.me/g/lzousq414
+Youtuber : Trần Văn Hoàng
+Zalo : 0974698128
 ════════════════════════════════════════════════  
 """)
     for X in info:

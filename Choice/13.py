@@ -49,7 +49,7 @@ with open(proxy_list, 'r') as file:
     proxy_list = file.read().split("\n")
     proxy_count = len(proxy_list)
 luu = input("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mVui Lòng Nhập Tệp Để Lưu Proxy Live : \033[1;36m")
-print(f" \033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mFound : {proxy_count} Proxy In Your Proxy File")
+print(f"\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mFound : {proxy_count} Proxy In Your Proxy File")
 sleep(2)
 print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mPlease Wait For A Sec")
 sleep(3)
