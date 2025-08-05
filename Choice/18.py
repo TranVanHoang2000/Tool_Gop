@@ -97,7 +97,7 @@ def f9kSLNSXl():
             return None, None, None, None, None
     return None, None, None, None, None
 
-def QuanHau(email, password, first_name, last_name, birthday):
+def TVH(email, password, first_name, last_name, birthday):
     api_key = '882a8490361da98702bf97a021ddc14d'
     secret = '62f8ce9f74b12f84c123cc23437a4a32'
     gender = random.choice(['Nam', 'Nữ'])
@@ -158,7 +158,8 @@ def create_accounts(num_accounts):
     for i in range(num_accounts):
         email, password, first_name, last_name, birthday = f9kSLNSXl()
         if email and password and first_name and last_name and birthday:
-            QuanHau(email, password, first_name, last_name, birthday)
+            TVH(email, password, first_name, last_name, birthday)
 
 num_accounts = int(input(f'\n\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số Lượng Acc Muốn Reg : \033[1;36m'))
 create_accounts(num_accounts)
+print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mĐã Tạo Xong !")
