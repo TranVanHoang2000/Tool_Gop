@@ -1,125 +1,164 @@
-# -*- coding: utf-8 -*-
-import hashlib
-import random
 import requests
-import time
-from datetime import datetime
-import json
-import sys
-import urllib3
+import random
+import string
+import hashlib
+import os, sys
+from time import sleep
+from pystyle import Colors, Colorate
+try:
+    from faker import Faker
+    from Crypto.Cipher import AES
+    from Crypto.Util.Padding import pad
+    import requests
+except ImportError:
+    os.system('pip install Faker')
+    os.system('pip install requests')
+    os.system('pip install pycryptodome')
+from faker import Faker
+from Crypto.Cipher import AES
+from Crypto.Util.Padding import pad
+import requests
 
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+os.system("cls" if os.name == "nt" else "clear")
 
-app = {
-    'api_key': '882a8490361da98702bf97a021ddc14d',
-    'secret': '62f8ce9f74b12f84c123cc23437a4a32',
-    'key': ['ChanHungCoder_KeyRegFBVIP_9999', 'DCHVIPKEYREG']
-}
+def banner():
+    banner = Colorate.Diagonal(Colors.rainbow, """
+████████╗██╗   ██╗██╗  ██╗████████╗ ██████╗  ██████╗ ██╗     
+╚══██╔══╝██║   ██║██║  ██║╚══██╔══╝██╔═══██╗██╔═══██╗██║     
+   ██║   ██║   ██║███████║   ██║   ██║   ██║██║   ██║██║     
+   ██║   ╚██╗ ██╔╝██╔══██║   ██║   ██║   ██║██║   ██║██║     
+   ██║    ╚████╔╝ ██║  ██║   ██║   ╚██████╔╝╚██████╔╝███████╗
+   ╚═╝     ╚═══╝  ╚═╝  ╚═╝   ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝
+""")
+    for X in banner:
+        sys.stdout.write(X)
+        sys.stdout.flush()
+        sleep(0.000001)
 
-email_prefix = ['gmail.com', 'hotmail.com', 'yahoo.com', 'outlook.com']
-
-def _call(url='', params=None, post=True):
-    headers = {
-        'User-Agent': '[FBAN/FB4A;FBAV/35.0.0.48.273;FBDM/{density=1.33125,width=800,height=1205};FBLC/en_US;FBCR/;FBPN/com.facebook.katana;FBDV/Nexus 7;FBSV/4.1.1;FBBK/0;]'
-    }
-    try:
-        if post:
-            response = requests.post(url, data=params, headers=headers, verify=False)
-        else:
-            response = requests.get(url, params=params, headers=headers, verify=False)
-        return response.text
-    except Exception as e:
-        return '{"error_msg":"Request failed"}'
-
-def create_account():
-    random_birth_day = datetime.strftime(datetime.fromtimestamp(random.randint(
-        int(time.mktime(datetime.strptime('1980-01-01', '%Y-%m-%d').timetuple())),
-        int(time.mktime(datetime.strptime('1995-12-30', '%Y-%m-%d').timetuple()))
-    )), '%Y-%m-%d')
-
-    names = {
-        'first': ['James', 'John', 'Robers', 'Michael', 'William', 'David'],
-        'last': ['Smith', 'Johnson', 'Williams', 'Brown', 'Jones', 'Miller'],
-        'mid': ['Alexander', 'Anthony', 'Charles', 'Dash', 'David', 'Edward']
-    }
+def info():
+    info = Colorate.Diagonal(Colors.rainbow, """
+\nAdmin Tool : Trần Văn Hoàng            Phiên Bản : 1.0
+════════════════════════════════════════════════  
+Youtuber : Trần Văn Hoàng
+Zalo : 0974698128
+════════════════════════════════════════════════  
+""")
+    for X in info:
+        sys.stdout.write(X)
+        sys.stdout.flush()
+        sleep(0.000001)
     
-    random_first_name = random.choice(names['first'])
-    random_name = f"{random.choice(names['mid'])} {random.choice(names['last'])}"
-    password = f'MkRegAcc_{random.randint(0, 9999999)}@@@'
-    full_name = f"{random_first_name} {random_name}"
-    md5_time = hashlib.md5(str(time.time()).encode()).hexdigest()
-    hash_ = f"{md5_time[0:8]}-{md5_time[8:12]}-{md5_time[12:16]}-{md5_time[16:20]}-{md5_time[20:32]}"
-    email_rand = f"{full_name.replace(' ', '').lower()}{hashlib.md5((str(time.time()) + datetime.strftime(datetime.now(), '%Y%m%d')).encode()).hexdigest()[0:6]}@{random.choice(email_prefix)}"
-    gender = 'M' if random.randint(0, 10) > 5 else 'F'
+banner()
+info()
+
+def reverse_string(s):
+    return s[::-1]
+
+def xePwjMDG(length):
+    letters_and_digits = string.ascii_letters + string.digits
+    return ''.join(random.choice(letters_and_digits) for i in range(length))
+
+def tLx6cpsx():
+    url = 'https://api.mail.tm/domains'
+    try:
+        response = requests.get(url)
+        if response.status_code == 200:
+            return response.json()['hydra:member']
+        else:
+            pass
+            return None
+    except Exception as e:
+        print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;31mLỗi : {e}')
+        return None
+
+def f9kSLNSXl():
+    fake = Faker()
+    mail_domains = tLx6cpsx()
+    if mail_domains:
+        domain = random.choice(mail_domains)['domain']
+        username = xePwjMDG(10)
+        password = fake.password()
+        birthday = fake.date_of_birth(minimum_age=18, maximum_age=45)
+        first_name = fake.first_name()
+        last_name = fake.last_name()
+        url = 'https://api.mail.tm/accounts'
+        headers = {'Content-Type': 'application/json'}
+        data = {'address': f'{username}@{domain}', 'password': password}
+        try:
+            response = requests.post(url, headers=headers, json=data)
+            if response.status_code == 201:
+                print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mĐã Tạo Email, Đang Tạo Acc Fb : {username}@{domain}')
+                return (f'{username}@{domain}', password, first_name, last_name, birthday)
+            else:
+                pass
+                return None, None, None, None, None
+        except Exception as e:
+            print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;31mLỗi : {e}')
+            return None, None, None, None, None
+    return None, None, None, None, None
+
+def QuanHau(email, password, first_name, last_name, birthday):
+    api_key = '882a8490361da98702bf97a021ddc14d'
+    secret = '62f8ce9f74b12f84c123cc23437a4a32'
+    gender = random.choice(['Nam', 'Nữ'])
 
     req = {
-        'api_key': app['api_key'],
+        'api_key': api_key,
         'attempt_login': True,
-        'birthday': random_birth_day,
+        'birthday': birthday.strftime('%Y-%m-%d'),
         'client_country_code': 'EN',
         'fb_api_caller_class': 'com.facebook.registration.protocol.RegisterAccountMethod',
         'fb_api_req_friendly_name': 'registerAccount',
-        'firstname': random_first_name,
+        'firstname': first_name,
         'format': 'json',
         'gender': gender,
-        'lastname': random_name,
-        'email': email_rand,
+        'lastname': last_name,
+        'email': email,
         'locale': 'en_US',
         'method': 'user.register',
         'password': password,
-        'reg_instance': hash_,
+        'reg_instance': xePwjMDG(32),
         'return_multiple_errors': True
     }
 
-    sig = ''.join([f'{k}={v}' for k, v in sorted(req.items())])
-    ensig = hashlib.md5((sig + app['secret']).encode()).hexdigest()
+    sorted_req = sorted(req.items(), key=lambda x: x[0])
+    sig = ''.join(f'{k}={v}' for k, v in sorted_req)
+    ensig = hashlib.md5((sig + secret).encode()).hexdigest()
     req['sig'] = ensig
 
-    api = 'https://b-api.facebook.com/method/user.register'
-    response = _call(api, req)
+    api_url = 'https://b-api.facebook.com/method/user.register'
+    response = requests.post(api_url, data=req)
 
-    try:
-        reg_json = json.loads(response)
-    except json.JSONDecodeError:
-        print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;31mLỗi Khi Giải Mã JSON Từ API, Nội Dung Phản Hồi : ")
-        print(repr(response))
-        return
+    if response.status_code == 200:
+        reg = response.json()
+        id = reg.get('new_user_id')
+        token = reg.get('session_info', {}).get('access_token')
 
-    uid = reg_json.get('session_info', {}).get('uid')
-    access_token = reg_json.get('session_info', {}).get('access_token')
-    error_code = reg_json.get('error_code')
-    error_msg = reg_json.get('error_msg')
-
-    if uid and access_token:
-        data_to_save = f"{random_birth_day}:{full_name}:{email_rand}:{password}:{uid}:{access_token}"
-        with open("facebook.txt", "a", encoding="utf-8") as file:
-            file.write(data_to_save + "\n")
-
-        print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mTạo Thành Công :")
-        print(f"  \033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mSinh Nhật : {random_birth_day}")
-        print(f"  \033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mTên         : {full_name}")
-        print(f"  \033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mEmail          : {email_rand}")
-        print(f"  \033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mMật Khẩu      : {password}")
-        print(f"  \033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mUid            : {uid}")
-        print(f"  \033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mToken         : {access_token}")
-        print()
+        print (Colorate.Diagonal(Colors.blue_to_green, "══════════════════════════════════════════════════════════════"))
+        print(f"""\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mEmail : {email}
+\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mMật Khẩu : {password}
+\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mTên : {first_name} {last_name}
+\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mSinh Nhật : {birthday}
+\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mGiới Tính : {gender}""")
+        print (Colorate.Diagonal(Colors.blue_to_green, "══════════════════════════════════════════════════════════════"))
     else:
-        if error_code and error_msg:
-            print(f"\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;31mLỗi {error_code} - {error_msg}")
-        else:
-            print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;31mLỗi Không Xác Định")
+        print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;31mLỗi Khi Đăng Ký : {response.text}')
 
-if __name__ == "__main__":
-    try:
-        account_count = int(input("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số Lượng Acc Muốn Reg : \033[1;36m"))
-        if account_count <= 0:
-            print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mSố Lượng Phải Lớn Hơn 0")
-            sys.exit(1)
-    except ValueError:
-        print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mĐầu Vào Không Hợp Lệ !")
-        sys.exit(1)
-    for _ in range(account_count):
-        create_account()
-        time.sleep(5)
+def WcfriFTc(url, params, post=True):
+    headers = {
+        'User-Agent': '[FBAN/FB4A;FBAV/35.0.0.48.273;FBDM/{density=1.33125,width=800,height=1205};FBLC/en_US;FBCR/;FBPN/com.facebook.katana;FBDV/Nexus 7;FBSV/4.1.1;FBBK/0;]'
+    }
+    if post:
+        response = requests.post(url, data=params, headers=headers)
+    else:
+        response = requests.get(url, params=params, headers=headers)
+    return response.json()
 
-    print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mHoàn Tất, Kết Quả Lưu Tại File : facebook.txt")
+def create_accounts(num_accounts):
+    for i in range(num_accounts):
+        email, password, first_name, last_name, birthday = f9kSLNSXl()
+        if email and password and first_name and last_name and birthday:
+            QuanHau(email, password, first_name, last_name, birthday)
+
+num_accounts = int(input(f'\n\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số Lượng Acc Muốn Reg : \033[1;36m'))
+create_accounts(num_accounts)
