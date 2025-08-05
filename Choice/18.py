@@ -81,7 +81,7 @@ def create_account():
     try:
         reg_json = json.loads(response)
     except json.JSONDecodeError:
-        print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;31mLỗi Khi Giải Mã JSON Từ API, Nội Dung Phản Hồi : {response}")
+        print(f"\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;31mLỗi Khi Giải Mã JSON Từ API, Nội Dung Phản Hồi : {response}")
         return
 
     uid = reg_json.get('session_info', {}).get('uid')
