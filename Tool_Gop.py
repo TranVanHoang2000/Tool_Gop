@@ -61,7 +61,7 @@ Zalo : 0974698128
         sys.stdout.write(X)
         sys.stdout.flush()
         sleep(0.000001)
-    
+
 banner()
 info()
 
@@ -97,6 +97,11 @@ print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số 
 print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m16\033[1;32m]\033[1;36m Tool Buff View Tiktok (Bản PC)')
 print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m17\033[1;32m]\033[1;36m Tool Buff View Tiktok (Bản Adr, Ip)')
 print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m18\033[1;32m]\033[1;36m Tool Reg Acc Facebook')
+print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m19\033[1;32m]\033[1;36m Tool Spam Discord')
+print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m20\033[1;32m]\033[1;36m Tool Spam Telegram')
+print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m21\033[1;32m]\033[1;36m Tool Rút Gọn Link4m Từ Token')
+print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m22\033[1;32m]\033[1;36m Tool Nuôi Acc Facebook')
+print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m0\033[1;32m]\033[1;36m Thoát Ra')
 print (Colorate.Diagonal(Colors.blue_to_green, "══════════════════════════════════════════════════════════════"))
 
 chon = str(input("\033[1;32m[\033[1;31m♤\033[1;32m] \033[1;33m➩ \033[1;32mNhập Số \033[1;31m: \033[1;36m"))
@@ -137,6 +142,14 @@ if chon == '17' :
     exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/17.py').text)
 if chon == '18' :
     exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/18.py').text)
+if chon == '19' :
+    exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/19.py').text)
+if chon == '20' :
+    exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/20.py').text)
+if chon == '21' :
+    exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/21.py').text)
+if chon == '22' :
+    exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/22.py').text)
 else:
 	print("\033[1;32m[\033[1;31m♤\033[1;32m] \033[1;33m➩ \033[1;32mLựa Chọn Sai, Vui Lòng Thử Lại Sau !")	
 	sys.exit()
