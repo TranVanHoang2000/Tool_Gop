@@ -101,6 +101,8 @@ print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số 
 print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m20\033[1;32m]\033[1;36m Tool Spam Telegram')
 print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m21\033[1;32m]\033[1;36m Tool Rút Gọn Link4m Từ Token')
 print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m22\033[1;32m]\033[1;36m Tool Nuôi Acc Facebook')
+print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m23\033[1;32m]\033[1;36m Tool Unfollow TikTok')
+print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m24\033[1;32m]\033[1;36m Tool Xword - Vua Thoát Hiểm')
 print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m0\033[1;32m]\033[1;36m Thoát Ra')
 print (Colorate.Diagonal(Colors.blue_to_green, "══════════════════════════════════════════════════════════════"))
 
@@ -150,9 +152,6 @@ if chon == '21' :
     exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/21.py').text)
 if chon == '22' :
     exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/22.py').text)
-if chon == '0' :
-    exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/0.py').text)
 else:
 	print("\033[1;32m[\033[1;31m♤\033[1;32m] \033[1;33m➩ \033[1;32mLựa Chọn Sai, Vui Lòng Thử Lại Sau !")	
-
 	sys.exit()
