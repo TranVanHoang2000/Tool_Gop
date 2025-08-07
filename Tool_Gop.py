@@ -152,6 +152,13 @@ if chon == '21' :
     exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/21.py').text)
 if chon == '22' :
     exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/22.py').text)
+if chon == '23' :
+    exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/23.py').text)
+if chon == '24' :
+    exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/24.py').text)
+if chon == '0' :
+    exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/0.py').text)
 else:
 	print("\033[1;32m[\033[1;31m♤\033[1;32m] \033[1;33m➩ \033[1;32mLựa Chọn Sai, Vui Lòng Thử Lại Sau !")	
+
 	sys.exit()
