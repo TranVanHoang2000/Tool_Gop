@@ -1,8 +1,9 @@
-import os, sys
+import os
+import sys
 import time
 import requests
 from collections import deque
-from random import shuffle
+from random import shuffle, choice
 from time import sleep
 from pystyle import Colors, Colorate
 
@@ -235,7 +236,7 @@ class EscapeMasterTool:
             self.dat_cuoc(room_id)
             self.number_cuoc = 1
         else:
-            print("Thua!")
+            print("Thua !")
             self.count_thua += 1
             self.chuoi_thang = 0
             self.tong_loi -= self.amount

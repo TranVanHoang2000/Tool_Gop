@@ -12,6 +12,10 @@ from time import sleep
 
 DATA_FILE = "data_warzl.json"
 
+if not os.path.exists(DATA_FILE):
+    with open(DATA_FILE, "w", encoding="utf-8") as f:
+        f.write("{}")
+
 def load_config():
     if os.path.exists(DATA_FILE):
         try:
