@@ -60,129 +60,115 @@ Zalo : 0974698128
         sys.stdout.flush()
         sleep(0.000001)
 
-def main():
-	os.system("cls" if os.name == "nt" else "clear")
-	banner()
-	info()
-	
-	print (Colorate.Diagonal(Colors.rainbow, "\n╔═════════════════════╗"))
-	print (Colorate.Diagonal(Colors.rainbow, "║  Tool Trao Đổi Sub  ║"))
-	print (Colorate.Diagonal(Colors.rainbow, "╚═════════════════════╝"))
-	print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m1\033[1;32m]\033[1;36m Tool TĐS TikTok')
-	print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m2\033[1;32m]\033[1;36m Tool TĐS Instagram')
-	print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m3\033[1;32m]\033[1;36m Tool TĐS Facebook')
-	print (Colorate.Diagonal(Colors.rainbow, "╔═════════════════════════╗"))
-	print (Colorate.Diagonal(Colors.rainbow, "║  Tool Golike            ║"))
-	print (Colorate.Diagonal(Colors.rainbow, "╚═════════════════════════╝"))
-	print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m4\033[1;32m]\033[1;36m Tool Golike TikTok')
-	print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m5\033[1;32m]\033[1;36m Tool Golike Instagram')
-	print (Colorate.Diagonal(Colors.blue_to_green, "══════════════════════════════════════════════════════════════"))
-	print (Colorate.Diagonal(Colors.rainbow, "╔════════════════╗"))
-	print (Colorate.Diagonal(Colors.rainbow, "║  Tool Profile  ║"))
-	print (Colorate.Diagonal(Colors.rainbow, "╚════════════════╝"))
-	print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m6\033[1;32m]\033[1;36m Tool Share Ảo Cookies')
-	print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m7\033[1;32m]\033[1;36m Tool Lấy Token FB')
-	print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m8\033[1;32m]\033[1;36m Tool Get Id Bài Viết, Id Tài Khoản Facebook')
-	print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m9\033[1;32m]\033[1;36m Tool Lấy Cookies FB Từ Tài Khoản, Mật Khẩu')
-	print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m10\033[1;32m]\033[1;36m Tool War Messenger')
-	print (Colorate.Diagonal(Colors.blue_to_green, "══════════════════════════════════════════════════════════════"))
-	print (Colorate.Diagonal(Colors.rainbow, "╔════════════════╗"))
-	print (Colorate.Diagonal(Colors.rainbow, "║  Tool Tiện Ích ║"))
-	print (Colorate.Diagonal(Colors.rainbow, "╚════════════════╝"))
-	print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m11\033[1;32m]\033[1;36m Tool Doss Attack Web')
-	print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m12\033[1;32m]\033[1;36m Tool Lấy Proxy Các Loại')
-	print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m13\033[1;32m]\033[1;36m Tool Lọc Proxy Live')
-	print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m14\033[1;32m]\033[1;36m Tool Scan Mail Ảo Lấy Mã')
-	print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m15\033[1;32m]\033[1;36m Tool Spam Sms')
-	print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m16\033[1;32m]\033[1;36m Tool Buff View Tiktok (Bản PC)')
-	print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m17\033[1;32m]\033[1;36m Tool Buff View Tiktok (Bản Adr, Ip)')
-	print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m18\033[1;32m]\033[1;36m Tool Reg Acc Facebook')
-	print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m19\033[1;32m]\033[1;36m Tool Spam Discord')
-	print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m20\033[1;32m]\033[1;36m Tool Spam Telegram')
-	print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m21\033[1;32m]\033[1;36m Tool Rút Gọn Link4m Từ Token')
-	print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m22\033[1;32m]\033[1;36m Tool Nuôi Acc Facebook')
-	print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m23\033[1;32m]\033[1;36m Tool Unfollow TikTok')
-	print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m24\033[1;32m]\033[1;36m Tool Xword - Vua Thoát Hiểm')
-	print (Colorate.Diagonal(Colors.blue_to_green, "══════════════════════════════════════════════════════════════"))
-	print (Colorate.Diagonal(Colors.rainbow, "╔════════════════╗"))
-	print (Colorate.Diagonal(Colors.rainbow, "║  Tool Encode   ║"))
-	print (Colorate.Diagonal(Colors.rainbow, "╚════════════════╝"))
-	print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m25\033[1;32m]\033[1;36m Tool Encode TVH [V1]')
-	print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m26\033[1;32m]\033[1;36m Tool Encode TVH [V2]')
-	print (Colorate.Diagonal(Colors.blue_to_green, "══════════════════════════════════════════════════════════════"))
-	print (Colorate.Diagonal(Colors.rainbow, "╔════════════════╗"))
-	print (Colorate.Diagonal(Colors.rainbow, "║  Tool Zalo       ║"))
-	print (Colorate.Diagonal(Colors.rainbow, "╚════════════════╝"))
-	print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m27\033[1;32m]\033[1;36m Tool Spam Zalo [New]')
-	print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m0\033[1;32m]\033[1;36m Thoát Ra')
+print (Colorate.Diagonal(Colors.rainbow, "\n╔═════════════════════╗"))
+print (Colorate.Diagonal(Colors.rainbow, "║  Tool Trao Đổi Sub  ║"))
+print (Colorate.Diagonal(Colors.rainbow, "╚═════════════════════╝"))
+print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m1\033[1;32m]\033[1;36m Tool TĐS TikTok')
+print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m2\033[1;32m]\033[1;36m Tool TĐS Instagram')
+print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m3\033[1;32m]\033[1;36m Tool TĐS Facebook')
+print (Colorate.Diagonal(Colors.rainbow, "╔═════════════════════════╗"))
+print (Colorate.Diagonal(Colors.rainbow, "║  Tool Golike            ║"))
+print (Colorate.Diagonal(Colors.rainbow, "╚═════════════════════════╝"))
+print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m4\033[1;32m]\033[1;36m Tool Golike TikTok')
+print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m5\033[1;32m]\033[1;36m Tool Golike Instagram')
+print (Colorate.Diagonal(Colors.blue_to_green, "══════════════════════════════════════════════════════════════"))
+print (Colorate.Diagonal(Colors.rainbow, "╔════════════════╗"))
+print (Colorate.Diagonal(Colors.rainbow, "║  Tool Profile  ║"))
+print (Colorate.Diagonal(Colors.rainbow, "╚════════════════╝"))
+print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m6\033[1;32m]\033[1;36m Tool Share Ảo Cookies')
+print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m7\033[1;32m]\033[1;36m Tool Lấy Token FB')
+print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m8\033[1;32m]\033[1;36m Tool Get Id Bài Viết, Id Tài Khoản Facebook')
+print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m9\033[1;32m]\033[1;36m Tool Lấy Cookies FB Từ Tài Khoản, Mật Khẩu')
+print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m10\033[1;32m]\033[1;36m Tool War Messenger')
+print (Colorate.Diagonal(Colors.blue_to_green, "══════════════════════════════════════════════════════════════"))
+print (Colorate.Diagonal(Colors.rainbow, "╔════════════════╗"))
+print (Colorate.Diagonal(Colors.rainbow, "║  Tool Tiện Ích ║"))
+print (Colorate.Diagonal(Colors.rainbow, "╚════════════════╝"))
+print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m11\033[1;32m]\033[1;36m Tool Doss Attack Web')
+print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m12\033[1;32m]\033[1;36m Tool Lấy Proxy Các Loại')
+print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m13\033[1;32m]\033[1;36m Tool Lọc Proxy Live')
+print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m14\033[1;32m]\033[1;36m Tool Scan Mail Ảo Lấy Mã')
+print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m15\033[1;32m]\033[1;36m Tool Spam Sms')
+print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m16\033[1;32m]\033[1;36m Tool Buff View Tiktok (Bản PC)')
+print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m17\033[1;32m]\033[1;36m Tool Buff View Tiktok (Bản Adr, Ip)')
+print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m18\033[1;32m]\033[1;36m Tool Reg Acc Facebook')
+print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m19\033[1;32m]\033[1;36m Tool Spam Discord')
+print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m20\033[1;32m]\033[1;36m Tool Spam Telegram')
+print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m21\033[1;32m]\033[1;36m Tool Rút Gọn Link4m Từ Token')
+print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m22\033[1;32m]\033[1;36m Tool Nuôi Acc Facebook')
+print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m23\033[1;32m]\033[1;36m Tool Unfollow TikTok')
+print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m24\033[1;32m]\033[1;36m Tool Xword - Vua Thoát Hiểm')
+print (Colorate.Diagonal(Colors.blue_to_green, "══════════════════════════════════════════════════════════════"))
+print (Colorate.Diagonal(Colors.rainbow, "╔════════════════╗"))
+print (Colorate.Diagonal(Colors.rainbow, "║  Tool Encode   ║"))
+print (Colorate.Diagonal(Colors.rainbow, "╚════════════════╝"))
+print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m25\033[1;32m]\033[1;36m Tool Encode TVH [V1]')
+print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m26\033[1;32m]\033[1;36m Tool Encode TVH [V2]')
+print (Colorate.Diagonal(Colors.blue_to_green, "══════════════════════════════════════════════════════════════"))
+print (Colorate.Diagonal(Colors.rainbow, "╔════════════════╗"))
+print (Colorate.Diagonal(Colors.rainbow, "║  Tool Zalo     ║"))
+print (Colorate.Diagonal(Colors.rainbow, "╚════════════════╝"))
+print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m27\033[1;32m]\033[1;36m Tool Spam Zalo [New]')
+print(f'\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mNhập Số \033[1;32m[\033[1;31m0\033[1;32m]\033[1;36m Thoát Ra')
 
-	while True:
-		chon = str(input("\033[1;32m[\033[1;31m♤\033[1;32m] \033[1;33m➩ \033[1;32mNhập Số \033[1;31m: \033[1;36m"))
-		if chon == '0' :
-			exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/0.py').text)
-		elif chon == '1' :
-			exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/1.py').text)
-		elif chon == '2':
-			exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/2.py').text)
-		elif chon == '3' :
-			exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/3.py').text) 
-		elif chon == '4' :
-			exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/4.py').text) 
-		elif chon == '5' : 
-			exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/5.py').text) 
-		elif chon == '6' :
-			exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/6.py').text)
-		elif chon == '7' :
-			exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/7.py').text)
-		elif chon == '8' :
-			exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/8.py').text)
-		elif chon == '9' :
-			exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/9.py').text)
-		elif chon == '10' :
-			exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/10.py').text)
-		elif chon == '11' :
-			exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/11.py').text)
-		elif chon == '12' :
-			exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/12.py').text)
-		elif chon == '13' :
-			exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/13.py').text)
-		elif chon == '14' :
-			exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/14.py').text)
-		elif chon == '15' :
-			exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/15.py').text)
-		elif chon == '16' :
-			exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/16.py').text)
-		elif chon == '17' :
-			exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/17.py').text)
-		elif chon == '18' :
-			exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/18.py').text)
-		elif chon == '19' :
-			exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/19.py').text)
-		elif chon == '20' :
-			exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/20.py').text)
-		elif chon == '21' :
-			exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/21.py').text)
-		elif chon == '22' :
-			exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/22.py').text)
-		elif chon == '23' :
-			exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/23.py').text)
-		elif chon == '24' :
-			exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/24.py').text)
-		elif chon == '25' :
-			exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/25.py').text)
-		elif chon == '26' :
-			exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/26.py').text)
-		elif chon == '27' :
-			exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/27.py').text)
-		else:
-			print("\033[1;32m[\033[1;31m♤\033[1;32m] \033[1;33m➩ \033[1;32mLựa Chọn Sai !")	
-			sleep(2)
-			continue
+chon = str(input("\033[1;32m[\033[1;31m♤\033[1;32m] \033[1;33m➩ \033[1;32mNhập Số \033[1;31m: \033[1;36m"))
 
-try:
-    main()
-except KeyboardInterrupt:
-    print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;32mCảm Ơn Bạn Đã Tin Tưởng Và Sử Dụng Tool, Chúc Bạn May Mắn !")
-    exit()
-except Exception as e:
-    print(str(e))
+if chon == '0' :
+	exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/0.py').text)
+elif chon == '1' :
+	exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/1.py').text)
+elif chon == '2':
+	exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/2.py').text)
+elif chon == '3' :
+	exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/3.py').text) 
+elif chon == '4' :
+	exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/4.py').text) 
+elif chon == '5' : 
+	exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/5.py').text) 
+elif chon == '6' :
+	exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/6.py').text)
+elif chon == '7' :
+	exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/7.py').text)
+elif chon == '8' :
+	exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/8.py').text)
+elif chon == '9' :
+	exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/9.py').text)
+elif chon == '10' :
+	exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/10.py').text)
+elif chon == '11' :
+	exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/11.py').text)
+elif chon == '12' :
+	exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/12.py').text)
+elif chon == '13' :
+	exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/13.py').text)
+elif chon == '14' :
+	exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/14.py').text)
+elif chon == '15' :
+	exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/15.py').text)
+elif chon == '16' :
+	exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/16.py').text)
+elif chon == '17' :
+	exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/17.py').text)
+elif chon == '18' :
+	exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/18.py').text)
+elif chon == '19' :
+	exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/19.py').text)
+elif chon == '20' :
+	exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/20.py').text)
+elif chon == '21' :
+	exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/21.py').text)
+elif chon == '22' :
+	exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/22.py').text)
+elif chon == '23' :
+	exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/23.py').text)
+elif chon == '24' :
+	exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/24.py').text)
+elif chon == '25' :
+	exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/25.py').text)
+elif chon == '26' :
+	exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/26.py').text)
+elif chon == '27' :
+	exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/27.py').text)
+else:
+	print("\033[1;32m[\033[1;31m♤\033[1;32m] \033[1;33m➩ \033[1;32mLựa Chọn Sai, Hãy Thử Lại Sau !")	
+	sys.exit()
