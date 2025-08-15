@@ -33,6 +33,17 @@ def loading(seconds):
 loading(5)
 sleep(1.5)
 
+def anti_debug():
+    if "pydevd" in sys.modules or "trace" in sys.argv:
+       print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;31mPhát Hiện Bebug, Thoát !")
+       exit()
+
+def anti_crack_pycdc():
+    if sys.argv[0].endswith(".pyc"):
+        print("\033[1;32m[\033[1;31m♤\033[1;32m]\033[1;33m ➩ \033[1;31mKhông Hỗ Trợ Chạy File .pyc, Thoát !")
+        time.sleep(1)
+        os._exit(137)
+
 def banner():
     banner = Colorate.Diagonal(Colors.rainbow, """
 ████████╗██╗   ██╗██╗  ██╗████████╗ ██████╗  ██████╗ ██╗     
@@ -59,6 +70,12 @@ Zalo : 0974698128
         sys.stdout.write(X)
         sys.stdout.flush()
         sleep(0.000001)
+
+anti_debug()
+anti_crack_pycdn()
+os.system("cls" if os.name == "nt" else "clear")
+banner()
+info()
 
 print (Colorate.Diagonal(Colors.rainbow, "\n╔═════════════════════╗"))
 print (Colorate.Diagonal(Colors.rainbow, "║  Tool Trao Đổi Sub  ║"))
