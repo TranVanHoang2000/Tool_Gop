@@ -72,7 +72,7 @@ Zalo : 0974698128
         sleep(0.000001)
 
 anti_debug()
-anti_crack_pycdn()
+anti_crack_pycdc()
 os.system("cls" if os.name == "nt" else "clear")
 banner()
 info()
@@ -188,4 +188,5 @@ elif chon == '27' :
 	exec(requests.get('https://raw.githubusercontent.com/TranVanHoang2000/Tool_Gop/main/Choice/27.py').text)
 else:
 	print("\033[1;32m[\033[1;31m♤\033[1;32m] \033[1;33m➩ \033[1;32mLựa Chọn Sai, Hãy Thử Lại Sau !")	
+
 	sys.exit()
